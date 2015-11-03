@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,18 +18,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9I-6E-FBH">
-                                <rect key="frame" x="164" y="319" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9I-6E-FBH">
+                                <rect key="frame" x="73" y="319" width="46" height="30"/>
                                 <animations/>
-                                <color key="backgroundColor" red="1" green="0.46511657159999997" blue="0.97031904150000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="click"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Sno-lj-KdS"/>
+                                    <constraint firstAttribute="width" constant="46" id="owz-g8-Fdx"/>
+                                </constraints>
+                                <state key="normal" title="alert">
+                                    <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="owz-g8-Fdx"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="btnclick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S6Q-lN-6V1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWK-Ll-vly">
+                                <rect key="frame" x="225" y="319" width="46" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="LDM-AO-6iZ"/>
+                                </constraints>
+                                <state key="normal" title="sheet"/>
+                                <connections>
+                                    <action selector="sheetclick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s89-7z-hjS"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bWK-Ll-vly" firstAttribute="height" secondItem="c9I-6E-FBH" secondAttribute="height" id="B62-Eq-Iva"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bWK-Ll-vly" secondAttribute="bottom" constant="318" id="DVH-Zv-Eca"/>
+                            <constraint firstItem="bWK-Ll-vly" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="299" id="JhA-a4-6cE"/>
+                            <constraint firstItem="bWK-Ll-vly" firstAttribute="width" secondItem="c9I-6E-FBH" secondAttribute="width" id="Tdb-7P-fEm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bWK-Ll-vly" secondAttribute="trailing" constant="84" id="ana-MU-pCX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="c9I-6E-FBH" secondAttribute="bottom" constant="318" id="egG-Cr-74U"/>
+                            <constraint firstItem="c9I-6E-FBH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="53" id="nAY-ft-McQ"/>
+                            <constraint firstItem="bWK-Ll-vly" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="205" id="sv9-ZK-YLO"/>
+                            <constraint firstItem="c9I-6E-FBH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="299" id="uWt-zW-0k6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bWK-Ll-vly" secondAttribute="trailing" constant="88" id="z1o-ig-N4S"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Tdb-7P-fEm"/>
+                                <exclude reference="ana-MU-pCX"/>
+                                <exclude reference="sv9-ZK-YLO"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
